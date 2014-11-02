@@ -8,8 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol Pannable <NSObject>
+
+-(BOOL) shouldPanInRect: (CGRect) rect;
+
+@optional
+
+-(BOOL) shouldPan;
+
+@end
+
 @interface MyView : UIView
 
+@property id<Pannable> pannable;
+
 -(void) pan:(id) args;
+
+-(void) registerPannable: (id<Pannable>) pannable;
 
 @end

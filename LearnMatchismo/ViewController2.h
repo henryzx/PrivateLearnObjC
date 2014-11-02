@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyView.h"
 
-@interface ViewController2 : UIViewController
+@interface ViewController2 : UIViewController <Pannable>
 
 @property (strong,nonatomic) NSString *data;
 

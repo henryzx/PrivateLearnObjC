@@ -29,7 +29,7 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    
+
     [self drawBackgroundImageInRect:rect context:context];
     
     [[UIColor greenColor] setFill];
@@ -98,6 +98,10 @@
         [recognizer setTranslation:CGPointZero inView:self];
         [self setNeedsDisplay];
     }
+}
+
+-(void) registerPannable:(id<Pannable>)pannable {
+    self.pannable = pannable;
 }
 
 @end

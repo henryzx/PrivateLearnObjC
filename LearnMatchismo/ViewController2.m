@@ -29,6 +29,11 @@
     UIPanGestureRecognizer *pangr = [[UIPanGestureRecognizer alloc]initWithTarget:self.myView action:@selector(pan:)];
     [self.myView addGestureRecognizer:pangr];
     
+    [self.myView registerPannable:self];
+}
+
+- (BOOL) shouldPanInRect:(CGRect)rect{
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D28D7461A0541D000B724C2 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D28D7451A0541D000B724C2 /* MyView.m */; };
 		2D420B341A05264900F62C13 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D420B331A05264900F62C13 /* ViewController2.m */; };
+		2D4328C71A0658EB0064B202 /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4328C61A0658EB0064B202 /* AnimationViewController.m */; };
 		2D7594DE1A026E05005E5FC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7594DD1A026E05005E5FC4 /* main.m */; };
 		2D7594E11A026E05005E5FC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7594E01A026E05005E5FC4 /* AppDelegate.m */; };
 		2D7594E41A026E05005E5FC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7594E31A026E05005E5FC4 /* ViewController.m */; };
@@ -38,6 +39,8 @@
 		2D28D7451A0541D000B724C2 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		2D420B321A05264900F62C13 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		2D420B331A05264900F62C13 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		2D4328C51A0658EB0064B202 /* AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
+		2D4328C61A0658EB0064B202 /* AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
 		2D7594D81A026E05005E5FC4 /* LearnMatchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnMatchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D7594DC1A026E05005E5FC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D7594DD1A026E05005E5FC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 				2D7595041A027297005E5FC4 /* Modules */,
 				2D28D7441A0541D000B724C2 /* MyView.h */,
 				2D28D7451A0541D000B724C2 /* MyView.m */,
+				2D4328C51A0658EB0064B202 /* AnimationViewController.h */,
+				2D4328C61A0658EB0064B202 /* AnimationViewController.m */,
 			);
 			path = LearnMatchismo;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				2D7595111A028DCA005E5FC4 /* Ship.m in Sources */,
 				2D7594DE1A026E05005E5FC4 /* main.m in Sources */,
 				2D7595021A026E36005E5FC4 /* Card.m in Sources */,
+				2D4328C71A0658EB0064B202 /* AnimationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -56,6 +56,15 @@
                                     <segue destination="THn-Sl-5st" kind="show" identifier="ShowViewController2" id="ZsL-0S-XxD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ky-CW-S7x">
+                                <rect key="frame" x="247" y="562" width="63" height="30"/>
+                                <state key="normal" title="Goto Tab">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="F1m-f3-6vq" kind="show" id="uNq-5k-Hyh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -74,7 +83,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023.5" y="380.5"/>
+            <point key="canvasLocation" x="973.5" y="380.5"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="J07-Mj-LS3">
+            <objects>
+                <viewController id="yO8-VV-pOx" customClass="AnimationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="otY-Up-qbh"/>
+                        <viewControllerLayoutGuide type="bottom" id="eEZ-RH-UMy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oqN-ej-MtB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jhA-9h-SPC">
+                                <rect key="frame" x="126" y="141" width="123" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qNK-cY-FMc">
+                                <rect key="frame" x="177" y="177" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puq-0u-ZyV">
+                                <rect key="frame" x="164" y="103" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didClickButton:" destination="yO8-VV-pOx" eventType="touchUpInside" id="V3v-us-U6e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="sUt-g7-XZa"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="button" destination="puq-0u-ZyV" id="qlb-uM-Q7R"/>
+                        <outlet property="progressBar" destination="qNK-cY-FMc" id="a51-DP-bJg"/>
+                        <outlet property="progressor" destination="jhA-9h-SPC" id="ldC-uw-QuZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTt-PS-xUh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1368.5" y="1146.5"/>
         </scene>
         <!--View Controller2-->
         <scene sceneID="MYR-K4-UlS">
@@ -137,6 +192,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XcZ-Ic-3dA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="211" y="380"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="S4D-5P-r4A">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="F1m-f3-6vq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Hxt-0H-nHN">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="yO8-VV-pOx" kind="relationship" relationship="viewControllers" id="TbF-Gx-zbR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkG-G1-efv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669" y="1146"/>
         </scene>
     </scenes>
 </document>
