@@ -8,10 +8,12 @@
 
 #import "ViewController2.h"
 #import "ViewController.h"
+#import "MyView.h"
 
 @interface ViewController2 ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet MyView *myView;
 
 @end
 
@@ -22,6 +24,11 @@
     // Do any additional setup after loading the view.
     
     [self textView].text = [NSString stringWithFormat:@"%@ %@",@"something ", [self data]];
+    
+    // Add a gesture recognizer to MyView
+    UIPanGestureRecognizer *pangr = [[UIPanGestureRecognizer alloc]initWithTarget:self.myView action:@selector(pan:)];
+    [self.myView addGestureRecognizer:pangr];
+    
 }
 
 - (void)didReceiveMemoryWarning {

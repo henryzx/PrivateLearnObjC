@@ -10,4 +10,6 @@
 
 @interface MyView : UIView
 
+-(void) pan:(id) args;
+
 @end

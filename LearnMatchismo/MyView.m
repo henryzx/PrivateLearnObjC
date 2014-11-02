@@ -8,6 +8,12 @@
 
 #import "MyView.h"
 
+@interface MyView()
+
+@property (nonatomic) CGPoint origin;
+
+@end
+
 @implementation MyView
 
 /*
@@ -43,18 +49,16 @@
     [path fill];
     [path stroke];
     
-    
+    [self drawOriginOvalWithContext: context];
     
 }
 
 - (void)drawRoundedCornerInRect:(CGRect)rect context:(CGContextRef) context{
     CGContextSaveGState(context);
     
-    [[UIColor yellowColor] setStroke];
+    [[UIColor yellowColor] setFill];
     UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(20, 20)];
-    [roundedRect stroke];
-    
-    
+    [roundedRect fill];
     
     CGContextRestoreGState(context);
 }
@@ -69,5 +73,31 @@
     CGContextRestoreGState(context);
 }
 
+/**
+ * Draw a purple Oval over Origin Point
+ */
+- (void) drawOriginOvalWithContext: (CGContextRef) context{
+    CGContextSaveGState(context);
+    
+    [[UIColor purpleColor] setFill];
+    
+    CGRect bounds = CGRectMake(self.origin.x, self.origin.y, 10, 10);
+    UIBezierPath *oval = [UIBezierPath bezierPathWithOvalInRect:bounds];
+    
+    [oval fill];
+    
+    CGContextRestoreGState(context);
+}
+
+-(void) pan:(UIPanGestureRecognizer *)recognizer{
+    if ((recognizer.state == UIGestureRecognizerStateChanged) || (recognizer.state == UIGestureRecognizerStateEnded)) {
+        //NSLog(@"panning %@", recognizer);
+        CGPoint translation = [recognizer translationInView:self];
+        
+        self.origin = CGPointMake(self.origin.x + translation.x, self.origin.y + translation.y);
+        [recognizer setTranslation:CGPointZero inView:self];
+        [self setNeedsDisplay];
+    }
+}
 
 @end

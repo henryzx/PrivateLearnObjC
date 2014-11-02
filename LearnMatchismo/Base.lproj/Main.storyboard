@@ -112,6 +112,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="myView" destination="qWT-Ly-ZXt" id="fI4-lX-aYj"/>
                         <outlet property="textView" destination="g8P-Cr-Pqt" id="ORB-HC-RM2"/>
                     </connections>
                 </viewController>
