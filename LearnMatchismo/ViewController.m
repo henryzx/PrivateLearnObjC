@@ -5,8 +5,10 @@
 //  Created by zhengxiao on 10/30/14.
 //  Copyright (c) 2014 zhengxiao. All rights reserved.
 //
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 
 #import "ViewController.h"
+#import "ViewController2.h"
 #import "Ship.h"
 
 @interface ViewController ()
@@ -31,6 +33,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (IBAction)didClickGotoController2:(id)sender {
+    [self performSegueWithIdentifier:@"ShowViewController2" sender:self];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[ViewController2 class]]) {
+        ViewController2 *vc = (ViewController2 *) segue.destinationViewController;
+        vc.data = @"babyHello";
+    }
+}
+
 
 - (IBAction)onPressButton:(id)sender {
     

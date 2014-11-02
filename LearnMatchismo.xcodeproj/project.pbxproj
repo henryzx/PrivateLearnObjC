@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D28D7461A0541D000B724C2 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D28D7451A0541D000B724C2 /* MyView.m */; };
+		2D420B341A05264900F62C13 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D420B331A05264900F62C13 /* ViewController2.m */; };
 		2D7594DE1A026E05005E5FC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7594DD1A026E05005E5FC4 /* main.m */; };
 		2D7594E11A026E05005E5FC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7594E01A026E05005E5FC4 /* AppDelegate.m */; };
 		2D7594E41A026E05005E5FC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7594E31A026E05005E5FC4 /* ViewController.m */; };
@@ -32,6 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D28D7441A0541D000B724C2 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		2D28D7451A0541D000B724C2 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		2D420B321A05264900F62C13 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		2D420B331A05264900F62C13 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		2D7594D81A026E05005E5FC4 /* LearnMatchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnMatchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D7594DC1A026E05005E5FC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D7594DD1A026E05005E5FC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,16 +102,20 @@
 		2D7594DA1A026E05005E5FC4 /* LearnMatchismo */ = {
 			isa = PBXGroup;
 			children = (
+				2D7594E51A026E05005E5FC4 /* Main.storyboard */,
 				2D75950E1A028DB1005E5FC4 /* Introspection */,
 				2D7594DF1A026E05005E5FC4 /* AppDelegate.h */,
 				2D7594E01A026E05005E5FC4 /* AppDelegate.m */,
 				2D7594E21A026E05005E5FC4 /* ViewController.h */,
 				2D7594E31A026E05005E5FC4 /* ViewController.m */,
-				2D7594E51A026E05005E5FC4 /* Main.storyboard */,
+				2D420B321A05264900F62C13 /* ViewController2.h */,
+				2D420B331A05264900F62C13 /* ViewController2.m */,
 				2D7594E81A026E05005E5FC4 /* Images.xcassets */,
 				2D7594EA1A026E05005E5FC4 /* LaunchScreen.xib */,
 				2D7594DB1A026E05005E5FC4 /* Supporting Files */,
 				2D7595041A027297005E5FC4 /* Modules */,
+				2D28D7441A0541D000B724C2 /* MyView.h */,
+				2D28D7451A0541D000B724C2 /* MyView.m */,
 			);
 			path = LearnMatchismo;
 			sourceTree = "<group>";
@@ -264,7 +274,9 @@
 				2D7595071A0272B9005E5FC4 /* Deck.m in Sources */,
 				2D7594E41A026E05005E5FC4 /* ViewController.m in Sources */,
 				2D7594E11A026E05005E5FC4 /* AppDelegate.m in Sources */,
+				2D28D7461A0541D000B724C2 /* MyView.m in Sources */,
 				2D75950D1A0283CC005E5FC4 /* PlayingCardDeck.m in Sources */,
+				2D420B341A05264900F62C13 /* ViewController2.m in Sources */,
 				2D7595111A028DCA005E5FC4 /* Ship.m in Sources */,
 				2D7594DE1A026E05005E5FC4 /* main.m in Sources */,
 				2D7595021A026E36005E5FC4 /* Card.m in Sources */,
@@ -458,6 +470,7 @@
 				2D7594FD1A026E05005E5FC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2D7594FE1A026E05005E5FC4 /* Build configuration list for PBXNativeTarget "LearnMatchismoTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +479,7 @@
 				2D7595001A026E05005E5FC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
