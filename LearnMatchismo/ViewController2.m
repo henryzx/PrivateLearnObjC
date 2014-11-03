@@ -57,5 +57,20 @@
     [self.navigationController pushViewController:vc animated:NO];
 }
 
+- (IBAction)performMultiThreadThings:(id)sender {
+    dispatch_queue_t queue = dispatch_queue_create("worker1", NULL);
+    dispatch_async(queue, ^{
+        __weak ViewController2 *weakSelf = self;
+        for (int i = 0; i < 100; i++) {
+            NSLog(@"slept %d", i);
+            sleep(1);
+            [weakSelf performSelectorOnMainThread:@selector(populateNumber:) withObject: [NSNumber numberWithInt:i] waitUntilDone:NO];
+        }
+    });
+}
+
+- (void) populateNumber: (NSNumber *) number{
+    self.textView.text = [[NSString alloc] initWithFormat:@" :) number = %@  (: ", number];
+}
 
 @end
