@@ -7,6 +7,9 @@
 //
 
 #import "AnimationViewController.h"
+#import "Photo.h"
+#import "Entity.h"
+#import "Photo+Creater.h"
 
 
 @interface AnimationViewController ()
@@ -15,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *progressor;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *progressBar;
 @property NSMutableArray *animations;
+@property (weak, nonatomic) IBOutlet UILabel *dataLabel;
+@property (weak, nonatomic) UIManagedDocument *document;
 
 @end
 
@@ -48,6 +53,26 @@ sharedCompletion mySharedCompletion;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)queryPhotos:(id)sender {
+    if (self.document) {
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
+        request.fetchBatchSize = 20;
+        request.fetchLimit = 100;
+        request.predicate = [NSPredicate predicateWithFormat:@"any photo.name contains %@", @"ba"];
+        
+        NSError *error;
+        NSArray *photographers = [self.document.managedObjectContext executeFetchRequest:request error: &error];
+        
+        NSString *output = @"";
+        for (Photo *item in photographers) {
+            output = [output stringByAppendingString: [NSString stringWithFormat:@"%@",item]];
+        }
+        
+        self.dataLabel.text = output;
+    }
+
+    
+}
 
 /*
  #pragma mark - Navigation
@@ -59,6 +84,45 @@ sharedCompletion mySharedCompletion;
  }
  */
 
+- (IBAction)loadPhoto:(id)sender {
+    NSFileManager *fileManager =[NSFileManager defaultManager];
+    NSURL *documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
+    NSString *documentName = @"MyDocument";
+    NSURL *url = [documentsDirectory URLByAppendingPathComponent:documentName];
+    UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
+    
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
+    
+    if(!fileExists){
+        [document saveToURL:url forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){
+            if (success){
+                NSLog(@"Document File is Created");
+                [self didLoadData: document];
+            }else
+                NSLog(@"Document File Create Failed");
+        }];
+    }else{
+        [document openWithCompletionHandler:^(BOOL success){
+            if (success){
+                NSLog(@"Document File is Opened");
+                [self didLoadData: document];
+            }else
+                NSLog(@"Document File Open Failed");
+        }];
+    }
+}
+
+- (void) didLoadData: (UIManagedDocument *) document{
+    self.document = document;
+    if (document && document.documentState == UIDocumentStateNormal){
+        // document is ready
+        
+        NSManagedObjectContext *context = document.managedObjectContext;
+        
+        Photo *photo = [Photo photoWithData:@{@"name":@"hello"} inManagedObjectContext:context];
+        self.dataLabel.text = photo.description;
+    }
+}
 
 
 - (IBAction)didClickButton:(id)sender {
